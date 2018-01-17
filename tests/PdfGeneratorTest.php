@@ -55,6 +55,15 @@ class PdfGeneratorTest extends TestCase
         $pdfGenerator->generate([]);
     }
 
+    public function test_exception_is_thrown_with_incorrect_files_structure()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $pdfGenerator = $this->getClient();
+
+        $pdfGenerator->generate(['exception.html' => []]);
+    }
+
     /**
      * @return \GatenbySanderson\PdfGeneratorSdk\PdfGenerator
      */
