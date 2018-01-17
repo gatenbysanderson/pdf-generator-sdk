@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6e0e6953c1c63c22cd78de9fdcd46eb",
+    "content-hash": "b046ff290fe2f32253c3da3c4476ab02",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -295,16 +295,16 @@
         },
         {
             "name": "gatenbysanderson/code-sniffer",
-            "version": "dev-develop",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:gatenbysanderson/code-sniffer.git",
-                "reference": "3138e26e390309c64398b9b5b2b3648d2648422a"
+                "reference": "2136e9e42a44d4689315afbf5c61e8dfa22d1c40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gatenbysanderson/code-sniffer/zipball/3138e26e390309c64398b9b5b2b3648d2648422a",
-                "reference": "3138e26e390309c64398b9b5b2b3648d2648422a",
+                "url": "https://api.github.com/repos/gatenbysanderson/code-sniffer/zipball/2136e9e42a44d4689315afbf5c61e8dfa22d1c40",
+                "reference": "2136e9e42a44d4689315afbf5c61e8dfa22d1c40",
                 "shasum": ""
             },
             "require": {
@@ -323,7 +323,7 @@
                 }
             ],
             "description": "The coding standards set by the company",
-            "time": "2018-01-17T15:57:13+00:00"
+            "time": "2018-01-17T16:30:21+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -1694,9 +1694,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "gatenbysanderson/code-sniffer": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

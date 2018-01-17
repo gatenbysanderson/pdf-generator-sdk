@@ -30,7 +30,7 @@
     "require-dev": {
         "phpunit/phpunit": "^5.7",
         "vlucas/phpdotenv": "^2.4",
-        "gatenbysanderson/code-sniffer": "dev-develop"
+        "gatenbysanderson/code-sniffer": "^1.0"
     },
     "scripts": {
         "gscs": "phpcs --standard=vendor/gatenbysanderson/code-sniffer/src/phpcs.xml src"
