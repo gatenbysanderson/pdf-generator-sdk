@@ -1,0 +1,14 @@
+{
+    "name": "gatenbysanderson/pdf-generator-sdk",
+    "description": "PHP SDK for communicating with the PDF Generator",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Mubeen Inamdar",
+            "email": "mubeen.inamdar@gatenbysanderson.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {}
+}
