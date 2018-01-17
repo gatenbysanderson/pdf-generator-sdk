@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "GatenbySanderson\\PdfGeneratorSdk": "src/"
+            "GatenbySanderson\\PdfGeneratorSdk\\": "src/"
         }
     }
 }
