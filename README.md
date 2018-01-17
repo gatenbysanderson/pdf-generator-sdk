@@ -31,7 +31,7 @@ Start by adding this repo to your projects composer.json file:
 You can then simply require the package as with any other:
 
 ```
-$ composer require --dev gatenbysanderson/pdf-generator-sdk
+$ composer require gatenbysanderson/pdf-generator-sdk
 ```
 
 As the PDF Generator client requires a dependency of Guzzle in it's constructor, we can take advantage of a dependency injection container to automatically resolve this for us.
