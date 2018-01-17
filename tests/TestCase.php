@@ -18,4 +18,31 @@ abstract class TestCase extends BaseTestCase
     {
         (new Dotenv(dirname(__DIR__)))->load();
     }
+
+    /**
+     * @param string $filename
+     * @param string $directory
+     * @return string
+     */
+    protected function getFileContents($filename, $directory = 'storage')
+    {
+        $path = sprintf('%s/%s/%s', dirname(__FILE__), $directory, $filename);
+
+        return file_get_contents($path);
+    }
+
+    /**
+     * @param $filename
+     * @param string $contents
+     * @param string $directory
+     * @return string
+     */
+    protected function putFileContents($filename, $contents, $directory = 'results')
+    {
+        $path = sprintf('%s/%s/%s', dirname(__FILE__), $directory, $filename);
+
+        var_dump($path);
+
+        return file_put_contents($path, $contents);
+    }
 }
