@@ -38,6 +38,8 @@ class PdfGeneratorTest extends TestCase
             'test_2.html' => $this->getFileContents('test_2.html'),
         ]);
 
+        $this->assertArrayHasKey('status', $response);
+        $this->assertEquals('success', $response['status']);
         $this->assertArrayHasKey('data', $response);
         $this->assertArrayHasKey('type', $response['data']);
         $this->assertArrayHasKey('encoding', $response['data']);
@@ -62,6 +64,21 @@ class PdfGeneratorTest extends TestCase
         $pdfGenerator = $this->getClient();
 
         $pdfGenerator->generate(['exception.html' => []]);
+    }
+
+    public function test_pdf_is_generated_when_javascript_is_enabled()
+    {
+        $pdfGenerator = $this->getClient();
+
+        $response = $pdfGenerator->generate(
+            ['javascript.html' => $this->getFileContents('javascript.html')],
+            ['javascript' => true]
+        );
+
+        $this->assertArrayHasKey('status', $response);
+        $this->assertEquals('success', $response['status']);
+
+        $this->savePdf(__FUNCTION__, $response);
     }
 
     /**
