@@ -112,6 +112,20 @@ $files = [
 ];
 ```
 
+### Config Parameters
+
+When calling the `generate()` method, as well as files, you can pass an array which will also be posted to the server.
+This is useful for enabling certain flags, such as JavaScript:
+
+```php
+<?php
+
+$pdfGenerator->generate(
+    ['test.html' => '<h1>Hello</h1>'], 
+    ['javascript' => true]
+);
+```
+
 ## Running the tests
 
 To run the unit tests, begin by copying `.env.example` to `.env`, and set the `PDF_GENERATOR_URL` variable (**with** the protocol and **without** a trailing slash at the end).

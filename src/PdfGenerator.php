@@ -25,15 +25,18 @@ class PdfGenerator
 
     /**
      * @param array $files
-     * @param array $config
+     * @param array $options
      * @return array
      * @throws \GuzzleHttp\Exception\ClientException
      */
-    public function generate(array $files, array $config = [])
+    public function generate(array $files, array $options = [])
     {
-        $multipart = $this->getMultipart($files);
-        $options = ['multipart' => $multipart] + $config;
-        $response = $this->client->post('api/v1/pdf', $options);
+        $files = $this->getFiles($files);
+        $options = $this->getOptions($options);
+        $multipart = array_merge($files, $options);
+        $data = ['multipart' => $multipart];
+
+        $response = $this->client->post('api/v1/pdf', $data);
 
         return json_decode((string)$response->getBody(), static::JSON_DECODE_ASSOC);
     }
@@ -42,7 +45,7 @@ class PdfGenerator
      * @param array $files
      * @return array
      */
-    protected function getMultipart(array $files)
+    protected function getFiles(array $files)
     {
         $multipart = [];
 
@@ -56,5 +59,51 @@ class PdfGenerator
         }
 
         return $multipart;
+    }
+
+    /**
+     * @param array $options
+     * @return array
+     */
+    protected function getOptions(array $options)
+    {
+        if (empty($options)) {
+            return [];
+        }
+
+        return $this->flatten($options, 'options[', ']');
+    }
+
+    /**
+     * Used for turning an array into a PHP friendly name.
+     * @link https://stackoverflow.com/a/46276858 Source of solution
+     *
+     * @param $array
+     * @param string $prefix
+     * @param string $suffix
+     * @param int $i
+     * @return array
+     */
+    protected function flatten($array, $prefix = '[', $suffix = ']', $i = 0)
+    {
+        $result = [];
+
+        foreach ($array as $key => $value) {
+            if (is_array($value)) {
+                if ($i === 0) {
+                    $result = $result + $this->flatten($value, $key . $prefix, $suffix, $i);
+                } else {
+                    foreach ($this->flatten($value, $prefix . $key . $suffix . '[', $suffix, $i) as $k => $v) {
+                        $result[] = $v;
+                    }
+                }
+            } else {
+                $result[] = ['name' => $prefix . $key . $suffix, 'contents' => $value];
+            }
+
+            $i++;
+        }
+
+        return $result;
     }
 }
