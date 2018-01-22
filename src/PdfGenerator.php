@@ -106,4 +106,8 @@ class PdfGenerator
 
         return $result;
     }
+
+    public function fail_on_purpose(){
+        echo 'this should fail on purpose'  ;
+    }
 }
