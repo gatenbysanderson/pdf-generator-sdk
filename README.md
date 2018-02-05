@@ -172,8 +172,4 @@ All changes must be made through the medium of a pull request.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/gatenbysanderson/pdf-generator-sdk/tags). 
-
-## License
-
-This project is licensed under the proprietary License.
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/gatenbysanderson/pdf-generator-sdk/tags).
