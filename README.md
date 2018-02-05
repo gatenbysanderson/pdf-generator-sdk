@@ -1,6 +1,12 @@
 # PDF Generator SDK
 
-PHP SDK for communicating with the PDF Generator
+PHP SDK for communicating with the PDF Generator.
+
+## Licence
+
+Copyright &copy; 2018 GatenbySanderson Ltd.
+
+This project is open source software released under the terms of the MIT licence: see [LICENCE.md](LICENCE.md).
 
 ## Getting Started
 
