@@ -12,6 +12,8 @@ This project is open source software released under the terms of the MIT licence
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+**Note**: For Laravel projects, consider using the [Laravel PDF Generator](https://github.com/gatenbysanderson/laravel-pdf-generator) instead, which wraps around this SDK with support for compiling and parsing Blade files.
+
 ### Prerequisites
 
 * PHP >=5.6
