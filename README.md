@@ -1,6 +1,6 @@
 # PDF Generator SDK
 
-PHP SDK for communicating with the PDF Generator.
+PHP SDK for communicating with the PDF Generator (see [gatenbysanderson/pdf-generator](https://github.com/gatenbysanderson/pdf-generator)).
 
 ## Licence
 
@@ -17,8 +17,6 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 * PHP >=5.6
-
-As this is a private repo, when using composer to require this package - it is assumed your SSH key has already been added to GitHub to authenticate.
 
 ### Installing
 
